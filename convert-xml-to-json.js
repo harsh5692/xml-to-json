@@ -1,5 +1,5 @@
-function convertHyphenToUnderscore(str){
-	return str.split("-").join("_");
+function convertHyphenToUnderscore(str) {
+  return str.split("-").join("_");
 }
 
 function parseElement(xml) {
@@ -29,7 +29,7 @@ function parseElement(xml) {
     }, {});
   }
 
-// recursively call parseElement over children
+  // recursively call parseElement over children
   _.each(xml.children, function(child) {
     var name = convertHyphenToUnderscore(child.nodeName);
 
@@ -40,7 +40,9 @@ function parseElement(xml) {
     }
 
     // if name already in data, but not as an array, make it array
-    if (!_.isArray(data[name])) { data[name] = [data[name]]; }
+    if (!_.isArray(data[name])) {
+      data[name] = [data[name]];
+    }
 
     // now push the new child
     data[name].push(parseElement(child));
