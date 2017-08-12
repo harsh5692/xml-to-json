@@ -56,4 +56,5 @@ var xmlText = getXML();
 var XML = new DOMParser().parseFromString(xmlText, "text/xml");
 var obj = parseElement(XML);
 
+document.getElementById("result").innerHTML = JSON.stringify(obj);
 console.log("JSON Object : ", JSON.stringify(obj));
